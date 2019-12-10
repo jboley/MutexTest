@@ -2,16 +2,22 @@ On iOS, we have multiple different ways of synchronizing state between threads, 
 
 Ring Buffer
 -----------
-- NSLock: 1.086s
-- @synchronized: 2.37s
-- pthread_mutex_t: 0.667s
-- dispatch_queue_t (serial): 30.30s
+
+| Synchronization Type | Elapsed Time (s) |
+| ------ | ----: |
+| NSLock | `1.086` |
+| @synchronized | `2.370` |
+| pthread_mutex_t | `0.667` |
+| dispatch_queue_t (serial) | `30.300` |
 
 
 Multithreaded Dictionary
 ------------------------
-- NSLock: 0.783s
-- @synchronized: 2.095s
-- pthread_mutex_t: 0.688s
-- dispatch_queue_t (serial): 2.944s
-- dispatch_queue_t (concurrent w/ write barrier): 1.719s
+
+| Synchronization Type | Elapsed Time (s) |
+| ------ | ----: |
+| NSLock | `0.783` |
+| @synchronized | `2.095` |
+| pthread_mutex_t | `0.688` |
+| dispatch_queue_t (serial) | `2.944` |
+| dispatch_queue_t (concurrent w/ write barrier) | `1.719` |
